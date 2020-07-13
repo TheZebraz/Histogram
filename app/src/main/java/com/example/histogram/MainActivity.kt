@@ -22,23 +22,23 @@ class MainActivity : AppCompatActivity() {
         startDemoButton.setOnClickListener {
             if (checkAudioPermission()) {
                 startActivity(Intent(this@MainActivity, DemoActivity::class.java))
-            }
-            else {
+            } else {
                 requestAudioPermission()
             }
         }
     }
 
-    /**
-     *
-     */
     private fun checkAudioPermission(): Boolean =
-        ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED
+        ActivityCompat.checkSelfPermission(
+            this,
+            Manifest.permission.RECORD_AUDIO
+        ) == PackageManager.PERMISSION_GRANTED
 
-    /**
-     *
-     */
     private fun requestAudioPermission() {
-        ActivityCompat.requestPermissions(this, Array(1) {Manifest.permission.RECORD_AUDIO}, PERMISSIONS_REQUEST_CODE)
+        ActivityCompat.requestPermissions(
+            this,
+            Array(1) { Manifest.permission.RECORD_AUDIO },
+            PERMISSIONS_REQUEST_CODE
+        )
     }
 }

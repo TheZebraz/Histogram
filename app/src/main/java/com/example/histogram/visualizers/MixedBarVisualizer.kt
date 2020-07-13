@@ -10,7 +10,6 @@ import android.util.DisplayMetrics
 import android.util.TypedValue
 import androidx.annotation.ColorInt
 import androidx.core.graphics.ColorUtils
-import com.shevelev.music_visualization.library.VisualizerBase
 import java.util.*
 
 class MixedBarVisualizer

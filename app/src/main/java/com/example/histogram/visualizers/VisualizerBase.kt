@@ -1,4 +1,4 @@
-package com.shevelev.music_visualization.library
+package com.example.histogram.visualizers
 
 import android.content.Context
 import android.graphics.Canvas
@@ -17,8 +17,8 @@ constructor(
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    protected var audioBytes: ByteArray? = null
-    private var visualizer: Visualizer? = null
+    var audioBytes: ByteArray? = null
+//    private var visualizer: Visualizer? = null
 
     /**
      * Sets the audio session id for the currently playing audio
@@ -26,31 +26,31 @@ constructor(
     fun setAudioSessionId(audioSessionId: Int) {
         release()
 
-        visualizer = Visualizer(audioSessionId)
-            .apply {
-                this.captureSize = Visualizer.getCaptureSizeRange()[1]    // Capture size is maximum
-
-                this.setDataCaptureListener(object: Visualizer.OnDataCaptureListener {
-                    override fun onFftDataCapture(visualizer: Visualizer?, fft: ByteArray?, samplingRate: Int) {
-                    }
-
-                    override fun onWaveFormDataCapture(visualizer: Visualizer?, waveform: ByteArray?, samplingRate: Int) {
-                        waveform?.also {
-                            audioBytes = it.copyOf()
-                            invalidate()
-                        }
-                    }
-                }, Visualizer.getMaxCaptureRate() / 2, true, false)
-
-                this.enabled = true
-            }
+//        visualizer = Visualizer(audioSessionId)
+//            .apply {
+//                this.captureSize = Visualizer.getCaptureSizeRange()[1]    // Capture size is maximum
+//
+//                this.setDataCaptureListener(object: Visualizer.OnDataCaptureListener {
+//                    override fun onFftDataCapture(visualizer: Visualizer?, fft: ByteArray?, samplingRate: Int) {
+//                    }
+//
+//                    override fun onWaveFormDataCapture(visualizer: Visualizer?, waveform: ByteArray?, samplingRate: Int) {
+//                        waveform?.also {
+//                            audioBytes = it.copyOf()
+//                            invalidate()
+//                        }
+//                    }
+//                }, Visualizer.getMaxCaptureRate() / 2, true, false)
+//
+//                this.enabled = true
+//            }
     }
 
     /**
      * Releases the visualizer
      */
     fun release() {
-        visualizer?.also { it.release() }
+//        visualizer?.also { it.release() }
     }
 
     /**

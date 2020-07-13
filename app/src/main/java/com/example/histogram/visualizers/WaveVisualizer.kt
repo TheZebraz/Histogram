@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
-import com.shevelev.music_visualization.library.VisualizerBase
 
 class WaveVisualizer
 @JvmOverloads

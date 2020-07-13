@@ -8,7 +8,6 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.util.DisplayMetrics
 import android.util.TypedValue
-import com.shevelev.music_visualization.library.VisualizerBase
 
 class BarVisualizer
 @JvmOverloads

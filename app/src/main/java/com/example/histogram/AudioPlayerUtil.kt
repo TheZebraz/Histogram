@@ -5,11 +5,9 @@ import android.media.MediaPlayer
 import androidx.annotation.RawRes
 
 class AudioPlayerUtil {
+
     private var mediaPlayer: MediaPlayer? = null
 
-    /**
-     *
-     */
     fun stop() {
         if (mediaPlayer != null) {
             mediaPlayer!!.release()
@@ -33,8 +31,5 @@ class AudioPlayerUtil {
             }
     }
 
-    /**
-     *
-     */
     fun getAudioSessionId(): Int? = mediaPlayer?.audioSessionId
 }
